@@ -1,5 +1,15 @@
+import { Layout } from "components";
+
 function App() {
-  return <div>Hello management! </div>;
+  return (
+    <Layout>
+      {/* <Header /> */}
+      {/* <SideBar /> */}
+      {/* <MemberCard /> */}
+      {/* <OrganizationCard /> */}
+      hello world!
+    </Layout>
+  );
 }
 
 export default App;
