@@ -3,7 +3,7 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="sticky bg-gray-400 shadow-lg dark:bg-dark-700 bottom-0 block py-6 rounded-t-sm">
+    <footer className="sticky bg-gray-400 shadow-lg dark:bg-dark-700 bottom-0 block py-3 rounded-t-sm">
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4">

@@ -27,15 +27,15 @@ export const Table: React.FC<TableProps> = ({ columns, data }) => {
     });
 
   return (
-    <div className="mt-4 flex flex-col">
-      <div className="my-2 overflow-x-auto -mx-4 sm:mx-6 lg:mx-8">
+    <div className="flex flex-col">
+      <div className="my-1 mb-4 overflow-x-auto -mx-4 sm:mx-6 lg:mx-2">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table
               {...getTableProps()}
-              className="min-w-full divide-y divide-gray-200"
+              className="min-w-full divide-y divide-gray-300"
             >
-              <thead className="bg-gray-50">
+              <thead className="bg-gray-200">
                 {headerGroups.map((headerGroup) => (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((column) => (

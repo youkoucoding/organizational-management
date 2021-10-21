@@ -7,7 +7,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <SideBar />
-      <div className="md:ml-14 bg-light-500 dark:bg-dark-500 h-screen overflow-auto">
+      <div className="md:ml-12 bg-light-500 dark:bg-dark-500 h-screen overflow-auto">
         <Header />
         <div className="w-full min-h-full space-y-4">{children}</div>
         <Footer />

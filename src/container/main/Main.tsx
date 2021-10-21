@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { Card } from "components";
 import { Table } from "components";
 
 const getData = () => {
@@ -91,5 +92,9 @@ export const Main: React.FC = () => {
 
   const data = React.useMemo(() => getData(), []);
 
-  return <Table columns={columns} data={data} />;
+  return (
+    <Card>
+      <Table columns={columns} data={data} />
+    </Card>
+  );
 };

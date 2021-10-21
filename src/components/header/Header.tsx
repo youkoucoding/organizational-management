@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
           Organization DashBoard
         </div>
         <div className="md:flex hidden flex-row items-center lg:ml-auto mr-3">
-          <div className="relative flex w-full flex-wrap items-stretch h-12" />
+          <div className="relative flex w-full flex-wrap items-stretch h-8" />
         </div>
       </div>
     </nav>
