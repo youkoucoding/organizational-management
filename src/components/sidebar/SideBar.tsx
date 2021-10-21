@@ -12,9 +12,9 @@ export const SideBar = () => {
         </a>
         {/* Decorative Buttons */}
         <div className="md:flex md:flex-col md:items-stretch md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded">
-          <SideIcon icon={<FaReact size={30} />} text={"React"} />
-          <SideIcon icon={<SiTypescript size={30} />} text={"Typescript"} />
-          <SideIcon icon={<SiTailwindcss size={30} />} text={"Tailwindcss"} />
+          <SideIcon icon={<FaReact size={30} />} />
+          <SideIcon icon={<SiTypescript size={30} />} />
+          <SideIcon icon={<SiTailwindcss size={30} />} />
         </div>
       </div>
     </aside>
@@ -23,12 +23,8 @@ export const SideBar = () => {
 
 interface SideIconProps {
   icon: React.ReactNode;
-  text?: string;
 }
 
-const SideIcon: React.FC<SideIconProps> = ({ icon, text }) => (
-  <div className="sidebar-icon group">
-    {icon}
-    <span className="sidebar-tip group-hover:scale-100">{text}</span>
-  </div>
+const SideIcon = ({ icon }: SideIconProps) => (
+  <div className="sidebar-icon group">{icon}</div>
 );

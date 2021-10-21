@@ -1,4 +1,5 @@
-import { Layout } from "components";
+import { Main } from "container/main/Main";
+import { Layout } from "container/layout/Layout";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       {/* <SideBar /> */}
       {/* <MemberCard /> */}
       {/* <OrganizationCard /> */}
-      hello world!
+      <Main />
     </Layout>
   );
 }
