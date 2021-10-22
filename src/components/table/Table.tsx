@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useTable } from "react-table";
 
+import { CardTitle } from "components/cards/CardTitle";
+
 interface column {
   Header: string;
   accessor: string;
@@ -10,11 +12,9 @@ interface TableProps {
   columns: column[];
   data: {
     name: string;
-    email: string;
-    title: string;
-    status: string;
-    role: string;
+    id: string;
     age: number;
+    status: string;
   }[];
 }
 
@@ -28,12 +28,13 @@ export const Table: React.FC<TableProps> = ({ columns, data }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="my-1 mb-4 overflow-x-auto -mx-4 sm:mx-6 lg:mx-2">
-        <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+      <div className="mt-3 mb-2 overflow-x-auto mx-4 sm:mx-6 lg:mx-1">
+        <div className="align-middle inline-block min-w-full sm:px-6 lg:px-2">
+          <div className="shadow overflow-hidden border border-gray-300 sm:rounded-lg">
+            <CardTitle title="Organization-2" />
             <table
               {...getTableProps()}
-              className="min-w-full divide-y divide-gray-300"
+              className="min-w-full divide-y divide-gray-300 border-collapse"
             >
               <thead className="bg-gray-200">
                 {headerGroups.map((headerGroup) => (
@@ -41,7 +42,7 @@ export const Table: React.FC<TableProps> = ({ columns, data }) => {
                     {headerGroup.headers.map((column) => (
                       <th
                         scope="col"
-                        className="group px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                        className="group px-3 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider"
                         {...column.getHeaderProps()}
                       >
                         <div className="flex items-center justify-between">
@@ -64,10 +65,10 @@ export const Table: React.FC<TableProps> = ({ columns, data }) => {
                         return (
                           <td
                             {...cell.getCellProps()}
-                            className="px-6 py-4 whitespace-nowrap"
+                            className="px-3 py-4 whitespace-nowrap"
                             role="cell"
                           >
-                            <div className="text-sm text-gray-500">
+                            <div className="text-sm text-gray-600">
                               {cell.render("Cell")}
                             </div>
                           </td>
