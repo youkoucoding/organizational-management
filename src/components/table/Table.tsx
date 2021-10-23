@@ -4,7 +4,7 @@ import { CardTitle } from "components/cards/CardTitle";
 import { TableHead } from "components/table/TableHead";
 import { DisplayRow } from "components/table/DisplayRow";
 
-import { RowProps } from "components/table/DisplayRow";
+import { RowProps } from "types";
 
 export const Table = ({ members }: { members: RowProps[] }) => {
   return (

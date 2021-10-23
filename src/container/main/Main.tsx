@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { Card, Table, StatusPill } from "components";
+import { Card, Table } from "components";
 
-import { RowProps } from "components/table/DisplayRow";
+import { RowProps } from "types";
 
 const getData = (): RowProps[] => {
   const data = [
