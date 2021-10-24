@@ -1,6 +1,12 @@
-import { RowProps } from "types";
+import { MemProps } from "types";
 
-export const DisplayRow = ({ member }: { member: RowProps }) => {
+export const DisplayRow = ({
+  member,
+  handleToEdit,
+}: {
+  member: MemProps;
+  handleToEdit: (event: React.MouseEvent) => void;
+}) => {
   return (
     <tr className="w-full ">
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
@@ -41,7 +47,7 @@ export const DisplayRow = ({ member }: { member: RowProps }) => {
           <button
             className="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm uppercase tracking-wide font-medium"
             type="button"
-            onClick={() => window.open("https://google.com")}
+            onClick={handleToEdit}
           >
             edit
           </button>

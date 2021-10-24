@@ -20,20 +20,12 @@ export const Footer = () => {
           <div className="w-full md:w-8/12 px-4 mt-2 md:mt-0">
             <ul className="flex flex-wrap list-none md:justify-end justify-center">
               <li>
-                <FooterLink
-                  onClick={() =>
-                    window.open("https://github.com/youkoucoding", "_blank")
-                  }
-                >
+                <FooterLink onClick={() => alert("Thank you")}>
                   <FaGithub size={20} />
                 </FooterLink>
               </li>
               <li>
-                <FooterLink
-                  onClick={() =>
-                    window.open("https://twitter.com/you_kou_19", "_blank")
-                  }
-                >
+                <FooterLink onClick={() => alert("Thank you")}>
                   <FaTwitter size={20} />
                 </FooterLink>
               </li>

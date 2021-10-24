@@ -1,16 +1,16 @@
 import * as React from "react";
 
 import { Card, Table } from "components";
+import useMember from "hooks/useMember";
+import { MemProps } from "types";
 
-import { RowProps } from "types";
-
-const getData = (): RowProps[] => {
+const getData = (): MemProps[] => {
   const data = [
     {
       name: "member-1",
       id: "member-1",
       age: 29,
-      status: "activated",
+      status: "inactivated",
       role: "representation",
     },
     {
@@ -18,27 +18,34 @@ const getData = (): RowProps[] => {
       id: "member-2",
       age: 30,
       status: "inactivated",
-      role: " ",
+      role: "member",
     },
     {
       name: "member-3",
       id: "member-3",
       age: 31,
       status: "activated",
-      role: " ",
+      role: "member",
     },
   ];
-  return [...data];
+  return [...data] as MemProps[];
 };
 
 export const Main: React.FC = () => {
-  const data = React.useMemo(() => getData(), []);
+  // const data = React.useMemo(() => getData(), []);
+
+  const { data, loading, error } = useMember();
+
+  const handleToEdit = (event: React.MouseEvent) => {
+    event.preventDefault();
+    alert({ ...event });
+  };
 
   return (
     <Card>
-      <Table members={data} />
+      <Table members={data} handleToEdit={handleToEdit} />
       <Card>
-        <Table members={data} />
+        <Table members={data} handleToEdit={handleToEdit} />
       </Card>
     </Card>
   );
