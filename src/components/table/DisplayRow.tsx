@@ -8,7 +8,7 @@ export const DisplayRow = ({
   handleToEdit: (event: React.MouseEvent) => void;
 }) => {
   return (
-    <tr className="w-full ">
+    <tr className="w-full flex items-center">
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
           {member.id}
