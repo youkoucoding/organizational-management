@@ -26,7 +26,8 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "server": "json-server __json_mock__/db.json --watch --port 3001"
+    "server": "json-server __json_mock__/db.json --watch --port 3001",
+    "dev": "concurrently \"yarn start\" \"yarn server\""
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +52,7 @@
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "autoprefixer": "^9.8.8",
+    "concurrently": "^6.3.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": ">=6",
     "lint-staged": ">=10",
