@@ -1,6 +1,7 @@
-import { DeleteConfirmModal } from "components/modal/DeleteConfirmModal";
 import * as React from "react";
 import { MemProps } from "types";
+import { DeleteConfirmModal } from "components/modal/DeleteConfirmModal";
+import { MemberModal } from "components/modal/MemberModal";
 
 export const DisplayRow = ({
   member,
@@ -10,6 +11,8 @@ export const DisplayRow = ({
   handleToEdit: (event: React.MouseEvent) => void;
 }) => {
   const [showDeleteConfirm, setShowDeleteConfirm] = React.useState(false);
+  const [showMemberModal, setShowMemberModal] = React.useState(false);
+
   return (
     <tr className="w-full flex items-center">
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
@@ -50,7 +53,7 @@ export const DisplayRow = ({
           <button
             className="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm uppercase tracking-wide font-medium"
             type="button"
-            onClick={handleToEdit}
+            onClick={() => setShowMemberModal(true)}
           >
             edit
           </button>
@@ -61,6 +64,10 @@ export const DisplayRow = ({
           >
             delete
           </button>
+          <MemberModal
+            showMemberModal={showMemberModal}
+            setShowMemberModal={setShowMemberModal}
+          />
           <DeleteConfirmModal
             showDeleteConfirm={showDeleteConfirm}
             setShowDeleteConfirm={setShowDeleteConfirm}
