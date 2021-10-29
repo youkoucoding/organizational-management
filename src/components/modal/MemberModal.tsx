@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { FiAlertCircle } from "react-icons/fi";
 
 type Props = {
   showMemberModal: boolean;

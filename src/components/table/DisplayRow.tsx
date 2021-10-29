@@ -1,14 +1,14 @@
 import * as React from "react";
-import { MemProps } from "types";
 import { DeleteConfirmModal } from "components/modal/DeleteConfirmModal";
 import { MemberModal } from "components/modal/MemberModal";
+import { CardModel } from "model";
 
 export const DisplayRow = ({
   member,
-  handleToEdit,
-}: {
-  member: MemProps;
-  handleToEdit: (event: React.MouseEvent) => void;
+}: // handleToEdit,
+{
+  member: CardModel;
+  // handleToEdit: (event: React.MouseEvent) => void;
 }) => {
   const [showDeleteConfirm, setShowDeleteConfirm] = React.useState(false);
   const [showMemberModal, setShowMemberModal] = React.useState(false);
@@ -27,12 +27,12 @@ export const DisplayRow = ({
       </td>
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-start text-gray-500 font-medium">
-          {member.age}
+          {member.parent}
         </p>
       </td>
       <td className="w-1/6 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium text-sm uppercase tracking-wide">
-          {member.status.toLocaleLowerCase() === "activated" ? (
+          {/* {member.status.toLocaleLowerCase() === "activated" ? (
             <span className="bg-green-100 text-green-600 px-4 py-1 rounded-full">
               activated
             </span>
@@ -40,12 +40,12 @@ export const DisplayRow = ({
             <span className="bg-red-100 text-red-500 px-4 py-1 rounded-full">
               inactivated
             </span>
-          )}
+          )} */}
         </p>
       </td>
       <td className="w-1/6 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.role}
+          {member.representation}
         </p>
       </td>
       <td className="w-3/12 px-3 py-4 whitespace-nowrap bg-gray-50">

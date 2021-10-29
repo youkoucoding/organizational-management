@@ -1,52 +1,23 @@
-import * as React from "react";
+import { useContext } from "react";
+import { GlobalContext, AppContext } from "store/context";
 
 import { Card, Table } from "components";
-import useMember from "hooks/useMember";
-import { MemProps } from "types";
+import { OrgModel, MemberModel, CardModel } from "model";
+import { ACTION, State } from "store/types";
+import { AppContextProvider } from "./AppContextProvider";
 
-const getData = (): MemProps[] => {
-  const data = [
-    {
-      name: "member-1",
-      id: "member-1",
-      age: 29,
-      status: "inactivated",
-      role: "representation",
-    },
-    {
-      name: "member-2",
-      id: "member-2",
-      age: 30,
-      status: "inactivated",
-      role: "member",
-    },
-    {
-      name: "member-3",
-      id: "member-3",
-      age: 31,
-      status: "activated",
-      role: "member",
-    },
-  ];
-  return [...data] as MemProps[];
-};
-
-export const Main: React.FC = () => {
-  // const data = React.useMemo(() => getData(), []);
-
-  const { data, loading, error } = useMember();
-
-  const handleToEdit = (event: React.MouseEvent) => {
-    event.preventDefault();
-    alert({ ...event });
-  };
+export const Main = () => {
+  const { state, dispatch } = useContext<AppContext>(GlobalContext);
 
   return (
-    <Card>
-      <Table members={data} handleToEdit={handleToEdit} />
-      <Card>
-        <Table members={data} handleToEdit={handleToEdit} />
-      </Card>
-    </Card>
+    <AppContextProvider>
+      {/* <Card>
+        <Table members={state.data} />
+        <Card>
+          <Table members={state.data} />
+        </Card>
+      </Card> */}
+      {/* <div className="p-12">{JSON.stringify(state)}</div> */}
+    </AppContextProvider>
   );
 };

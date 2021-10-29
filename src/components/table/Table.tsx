@@ -4,14 +4,14 @@ import { CardTitle } from "components/cards/CardTitle";
 import { TableHead } from "components/table/TableHead";
 import { DisplayRow } from "components/table/DisplayRow";
 
-import { MemProps } from "types";
+import { MemberModel, CardModel } from "model";
 
 export const Table = ({
   members,
-  handleToEdit,
-}: {
-  members: MemProps[] | null;
-  handleToEdit: (event: React.MouseEvent) => void;
+}: // handleToEdit,
+{
+  members: CardModel[] | null;
+  // handleToEdit: (event: React.MouseEvent) => void;
 }) => {
   return (
     <div className="w-full -my-2 py-2">
@@ -30,7 +30,7 @@ export const Table = ({
                       <React.Fragment key={member.name}>
                         <DisplayRow
                           member={member}
-                          handleToEdit={handleToEdit}
+                          // handleToEdit={handleToEdit}
                         />
                       </React.Fragment>
                     ))}
