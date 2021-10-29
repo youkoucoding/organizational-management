@@ -1,13 +1,13 @@
 import * as React from "react";
 import { DeleteConfirmModal } from "components/modal/DeleteConfirmModal";
 import { MemberModal } from "components/modal/MemberModal";
-import { CardModel } from "model";
+import { RenderOrgModel } from "model";
 
 export const DisplayRow = ({
-  member,
+  renderOrg,
 }: // handleToEdit,
 {
-  member: CardModel;
+  renderOrg: RenderOrgModel;
   // handleToEdit: (event: React.MouseEvent) => void;
 }) => {
   const [showDeleteConfirm, setShowDeleteConfirm] = React.useState(false);
@@ -17,17 +17,17 @@ export const DisplayRow = ({
     <tr className="w-full flex items-center">
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.id}
+          {renderOrg.id}
         </p>
       </td>
       <td className="w-3/12 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.name}
+          {renderOrg.name}
         </p>
       </td>
       <td className="w-1/12 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-start text-gray-500 font-medium">
-          {member.parent}
+          {renderOrg.parent}
         </p>
       </td>
       <td className="w-1/6 px-3 py-4 whitespace-nowrap bg-gray-50">
@@ -45,7 +45,7 @@ export const DisplayRow = ({
       </td>
       <td className="w-1/6 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.representation}
+          {renderOrg.representation}
         </p>
       </td>
       <td className="w-3/12 px-3 py-4 whitespace-nowrap bg-gray-50">

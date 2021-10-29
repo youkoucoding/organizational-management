@@ -1,7 +1,12 @@
 import * as React from "react";
-import { AppContext } from "store/context";
-import { AppContextProvider } from "container/main/AppContextProvider";
+import { GlobalContext } from "store/context";
 
 export const MainWrapper = ({ children }: { children: React.ReactNode }) => {
-  return <AppContextProvider>{children}</AppContextProvider>;
+  const { state } = React.useContext(GlobalContext);
+
+  if (state.status === "isLoading" || state.status === "failure") {
+    return null;
+  } else {
+    return <React.Fragment>{children}</React.Fragment>;
+  }
 };

@@ -20,4 +20,4 @@ type MyComposite<O extends object, K extends keyof O, M extends object> = {
 };
 
 // render state
-export type CardModel = MyComposite<OrgModel, "members", MemberModel>;
+export type RenderOrgModel = MyComposite<OrgModel, "members", MemberModel>;

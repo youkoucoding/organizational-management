@@ -1,23 +1,21 @@
-import { useContext } from "react";
-import { GlobalContext, AppContext } from "store/context";
+import * as React from "react";
+import { GlobalContext } from "store/context";
 
 import { Card, Table } from "components";
-import { OrgModel, MemberModel, CardModel } from "model";
-import { ACTION, State } from "store/types";
-import { AppContextProvider } from "./AppContextProvider";
 
 export const Main = () => {
-  const { state, dispatch } = useContext<AppContext>(GlobalContext);
+  const { state, dispatch } = React.useContext(GlobalContext);
+
+  const { data: renderOrgs } = state;
+
+  // console.log(renderOrgs);
 
   return (
-    <AppContextProvider>
+    <Card>
+      <Table renderOrgs={renderOrgs} />
       {/* <Card>
-        <Table members={state.data} />
-        <Card>
-          <Table members={state.data} />
-        </Card>
-      </Card> */}
-      {/* <div className="p-12">{JSON.stringify(state)}</div> */}
-    </AppContextProvider>
+          <Table renderOrgs={renderOrgs} />
+        </Card> */}
+    </Card>
   );
 };

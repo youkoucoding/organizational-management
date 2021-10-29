@@ -11,7 +11,7 @@ export const reducer = (state: State, action: ActionTypes): State => {
     case ACTION.FetchDataSuccess: {
       return {
         ...state,
-        status: "isLoading",
+        status: "success",
         error: "",
         data: action.payload,
       };

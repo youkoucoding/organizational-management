@@ -1,10 +1,10 @@
-import { OrgModel, MemberModel, CardModel } from "model";
+import { RenderOrgModel } from "model";
 
 // global state
 export type State = {
   status: "isLoading" | "success" | "failure";
   error?: string;
-  data: CardModel[] | [];
+  data: RenderOrgModel[] | [];
 };
 
 // action types
@@ -19,7 +19,7 @@ export enum ACTION {
 
 export type FetchSuccessAction = {
   type: ACTION.FetchDataSuccess;
-  payload: CardModel[];
+  payload: RenderOrgModel[];
 };
 
 export type FetchFailureAction = {

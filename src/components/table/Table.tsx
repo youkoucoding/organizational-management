@@ -4,15 +4,9 @@ import { CardTitle } from "components/cards/CardTitle";
 import { TableHead } from "components/table/TableHead";
 import { DisplayRow } from "components/table/DisplayRow";
 
-import { MemberModel, CardModel } from "model";
+import { RenderOrgModel } from "model";
 
-export const Table = ({
-  members,
-}: // handleToEdit,
-{
-  members: CardModel[] | null;
-  // handleToEdit: (event: React.MouseEvent) => void;
-}) => {
+export const Table = ({ renderOrgs }: { renderOrgs: RenderOrgModel[] }) => {
   return (
     <div className="w-full -my-2 py-2">
       <div className="mx-2 sm:mx-6 lg:mx-1">
@@ -25,15 +19,16 @@ export const Table = ({
                   <TableHead />
                 </thead>
                 <tbody className="flex flex-col bg-white divide-y divide-gray-200">
-                  {members &&
-                    members.map((member) => (
-                      <React.Fragment key={member.name}>
+                  {JSON.stringify(renderOrgs)}
+                  {/* {renderOrgs &&
+                    renderOrgs.map((renderOrg) => (
+                      <React.Fragment key={renderOrg.name}>
                         <DisplayRow
-                          member={member}
+                          renderOrg={renderOrg}
                           // handleToEdit={handleToEdit}
                         />
                       </React.Fragment>
-                    ))}
+                    ))} */}
                 </tbody>
               </table>
               <div className="sticky bottom-0 py-3 rounded-b-lg bg-gray-300" />
