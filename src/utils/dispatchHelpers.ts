@@ -8,14 +8,17 @@ export const fetchDataDispatch = (
   data: RenderOrgModel[] | string,
   status?: number
 ) => {
+  // when after dispatch, the parent propertity turned to null.  why??
+  // I find the bug is in the getRenderData() func
   if (Number(status) >= 200 && Number(status) < 400) {
     return dispatch({
       type: ACTION.FetchDataSuccess,
       payload: data as RenderOrgModel[],
     });
+  } else {
+    return dispatch({
+      type: ACTION.FetchDataFailure,
+      payload: data as string,
+    });
   }
-  return dispatch({
-    type: ACTION.FetchDataFailure,
-    payload: data as string,
-  });
 };

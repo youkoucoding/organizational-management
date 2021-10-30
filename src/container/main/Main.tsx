@@ -9,10 +9,10 @@ export const Main = () => {
 
   const { data: renderOrgs } = state;
 
-  // console.log(renderOrgs);
   // 调用helper 将state.data 组织成为一个tree型待渲染数据。
-  // console.log(renderOrgs);
   const readyRenderTree = renderOrgs ? getRenderData(renderOrgs, null) : null;
+
+  console.log(readyRenderTree);
 
   return (
     <React.Fragment>

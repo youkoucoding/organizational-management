@@ -16,13 +16,15 @@ import { RenderOrgModel } from "model";
  * 递归的结束条件：无法在原始列表中， 筛出符合条件的元素。即， 此元素的parent值，找不到 id跟这个parent一样的元素。
  * 缺点： 慢，每一次filter 都遍历判断 整个列表的id和parent是否相等
  */
+// debug : org.parent = null XXX => org.parent === null <== debug is time killer!
 export const getRenderData: any = (
   orgs: RenderOrgModel[],
-  id: null | string = null
-) =>
-  orgs
-    .filter((org) => (org.parent = id))
+  id: string | null = null
+) => {
+  return orgs
+    .filter((org) => org.parent === id)
     .map((element) => ({
       ...element,
       children: getRenderData(orgs, element.id),
     }));
+};

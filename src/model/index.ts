@@ -9,7 +9,7 @@ export type OrgModel = {
   name: string;
   id: string;
   type: "organization";
-  parent: null | string;
+  parent: string | null;
   representation: string;
   members: string[] | MemberModel[] | null | [];
   children?: [];
