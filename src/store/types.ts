@@ -1,10 +1,10 @@
-import { RenderOrgModel } from "model";
+import { CompositedModel } from "model";
 
 // global state
 export type State = {
   status: "isLoading" | "success" | "failure";
   error?: string;
-  data: RenderOrgModel[] | [];
+  data: CompositedModel[] | [];
 };
 
 // action types
@@ -19,7 +19,7 @@ export enum ACTION {
 
 export type FetchSuccessAction = {
   type: ACTION.FetchDataSuccess;
-  payload: RenderOrgModel[];
+  payload: CompositedModel[];
 };
 
 export type FetchFailureAction = {

@@ -20,5 +20,16 @@ type MyComposite<O extends object, K extends keyof O, M extends object> = {
   [key in keyof O]: key extends K ? M[] : O[key];
 };
 
-// render state
-export type RenderOrgModel = MyComposite<OrgModel, "members", MemberModel>;
+// global state type
+export type CompositedModel = MyComposite<OrgModel, "members", MemberModel>;
+
+// ready for rendering data type
+export type ReadyForRenderModel = {
+  name: string;
+  id: string;
+  type: "organization";
+  parent: null | string;
+  representation: string;
+  members: MemberModel[] | [];
+  children: OrgModel[];
+};

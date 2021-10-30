@@ -5,13 +5,7 @@ export const TableHead = () => {
     <tr className="w-full flex">
       <th
         scope="col"
-        className="w-1/12 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
-      >
-        <span className="flex items-center justify-center font-medium">id</span>
-      </th>
-      <th
-        scope="col"
-        className="w-3/12 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
       >
         <span className="flex items-center justify-center font-medium">
           name
@@ -19,29 +13,32 @@ export const TableHead = () => {
       </th>
       <th
         scope="col"
-        className="w-1/12 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
-      >
-        <span className="flex items-center justify-start font-medium">age</span>
-      </th>
-      <th
-        scope="col"
-        className="w-1/6 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="w-1/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
       >
         <span className="flex items-center justify-center font-medium">
-          status
+          age
         </span>
       </th>
       <th
         scope="col"
-        className="w-1/6 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-center font-medium">
-          role
+        <span className="flex items-center justify-start font-medium">
+          actived
         </span>
       </th>
       <th
         scope="col"
-        className="w-3/12 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+      >
+        <span className="flex items-center justify-center font-medium">
+          representation
+        </span>
+      </th>
+
+      <th
+        scope="col"
+        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
       >
         <span className="flex items-center justify-center text-gray-500 font-medium">
           action

@@ -3,24 +3,24 @@ import { GlobalContext } from "store/context";
 
 import { Card } from "components";
 import { getRenderData } from "utils/getRenderData";
+import { ReadyForRenderModel } from "model";
 
 export const Main = () => {
   const { state } = React.useContext(GlobalContext);
 
   const { data: renderOrgs } = state;
 
-  // 调用helper 将state.data 组织成为一个tree型待渲染数据。
-  const readyRenderTree = renderOrgs ? getRenderData(renderOrgs, null) : null;
-
-  console.log(readyRenderTree);
+  // 调用utils/getRenderData 将state.data 组织成为一个tree型待渲染数据。
+  const readyRenderDatas = getRenderData(renderOrgs) as ReadyForRenderModel[];
 
   return (
-    <React.Fragment>
-      {/* {renderOrgs.map((renderOrg) => {
-        <div key={renderOrg.id} className="">
-          <Card renderOrg={renderOrg} />
-        </div>;
-      })} */}
-    </React.Fragment>
+    <div>
+      {readyRenderDatas.map((data) => (
+        <div key={data.name}>
+          {console.log(data.children)}
+          <Card renderData={data} />
+        </div>
+      ))}
+    </div>
   );
 };

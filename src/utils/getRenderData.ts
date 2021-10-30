@@ -1,4 +1,4 @@
-import { RenderOrgModel } from "model";
+import { CompositedModel } from "model";
 
 // 将 已经组合好的原始数据，按照 parent 属性进行分类。
 // 组合成为一个循环嵌套的 数据类型，即，为organizations数组中的每一元素加一个children 数组，
@@ -18,7 +18,7 @@ import { RenderOrgModel } from "model";
  */
 // debug : org.parent = null XXX => org.parent === null <== debug is time killer!
 export const getRenderData: any = (
-  orgs: RenderOrgModel[],
+  orgs: CompositedModel[],
   id: string | null = null
 ) => {
   return orgs

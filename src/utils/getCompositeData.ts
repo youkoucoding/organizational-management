@@ -1,4 +1,4 @@
-import { OrgModel, MemberModel, RenderOrgModel } from "model";
+import { OrgModel, MemberModel, CompositedModel } from "model";
 
 // 根据member-id 值， 将member数据完整赋值给orgs中members数组。
 // 集中处理一次数据，此数据作为渲染UI的原始数据
@@ -24,7 +24,7 @@ const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
   }
 
   // todo: 返回的 数据 会丢失 parent 值 not good, but why?=> getRenderData()
-  return _orgs as RenderOrgModel[];
+  return _orgs as CompositedModel[];
 };
 
 export default getCompositeData;
