@@ -10,9 +10,10 @@ const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
 
   for (let i = 0; i < _orgs.length; i++) {
     const arr = _orgs[i].members;
+
     if (arr) {
       for (let j = 0; j < arr.length; j++) {
-        const result = _members.filter((element) => element.id === arr[j]);
+        const result = _members.filter((member) => member.id === arr[j]);
         // result[0] ? (arr[j] = result[0]) : null; this is not good
         if (result[0]) {
           arr[j] = result[0];
@@ -20,6 +21,8 @@ const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
       }
     }
   }
+  // todo: 返回的 数据 会丢失 parent 值 not good, but why?
+  console.log(_orgs);
 
   return _orgs as RenderOrgModel[];
 };

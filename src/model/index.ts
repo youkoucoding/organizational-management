@@ -12,6 +12,7 @@ export type OrgModel = {
   parent: null | string;
   representation: string;
   members: string[] | MemberModel[] | null | [];
+  children?: [];
 };
 
 // custom  utility type to compose orgs and member types together.

@@ -6,7 +6,7 @@ import { DisplayRow } from "components/table/DisplayRow";
 
 import { RenderOrgModel } from "model";
 
-export const Table = ({ renderOrgs }: { renderOrgs: RenderOrgModel[] }) => {
+export const Table = ({ renderOrg }: { renderOrg: RenderOrgModel }) => {
   return (
     <div className="w-full -my-2 py-2">
       <div className="mx-2 sm:mx-6 lg:mx-1">
@@ -19,16 +19,15 @@ export const Table = ({ renderOrgs }: { renderOrgs: RenderOrgModel[] }) => {
                   <TableHead />
                 </thead>
                 <tbody className="flex flex-col bg-white divide-y divide-gray-200">
-                  {JSON.stringify(renderOrgs)}
-                  {/* {renderOrgs &&
-                    renderOrgs.map((renderOrg) => (
-                      <React.Fragment key={renderOrg.name}>
-                        <DisplayRow
-                          renderOrg={renderOrg}
-                          // handleToEdit={handleToEdit}
-                        />
-                      </React.Fragment>
-                    ))} */}
+                  {/* {JSON.stringify(renderOrgs)} */}
+                  {renderOrg.members.map((member) => (
+                    <React.Fragment key={member.name}>
+                      <DisplayRow
+                        member={member}
+                        // handleToEdit={handleToEdit}
+                      />
+                    </React.Fragment>
+                  ))}
                 </tbody>
               </table>
               <div className="sticky bottom-0 py-3 rounded-b-lg bg-gray-300" />

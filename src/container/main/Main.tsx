@@ -1,21 +1,26 @@
 import * as React from "react";
 import { GlobalContext } from "store/context";
 
-import { Card, Table } from "components";
+import { Card } from "components";
+import { getRenderData } from "utils/getRenderData";
 
 export const Main = () => {
-  const { state, dispatch } = React.useContext(GlobalContext);
+  const { state } = React.useContext(GlobalContext);
 
   const { data: renderOrgs } = state;
 
   // console.log(renderOrgs);
+  // 调用helper 将state.data 组织成为一个tree型待渲染数据。
+  // console.log(renderOrgs);
+  const readyRenderTree = renderOrgs ? getRenderData(renderOrgs, null) : null;
 
   return (
-    <Card>
-      <Table renderOrgs={renderOrgs} />
-      {/* <Card>
-          <Table renderOrgs={renderOrgs} />
-        </Card> */}
-    </Card>
+    <React.Fragment>
+      {/* {renderOrgs.map((renderOrg) => {
+        <div key={renderOrg.id} className="">
+          <Card renderOrg={renderOrg} />
+        </div>;
+      })} */}
+    </React.Fragment>
   );
 };
