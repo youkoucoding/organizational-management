@@ -16,10 +16,7 @@ export const Main = () => {
   return (
     <div>
       {readyRenderDatas.map((data) => (
-        <div key={data.name}>
-          {console.log(data.children)}
-          <Card renderData={data} />
-        </div>
+        <Card key={data.name} renderData={data} />
       ))}
     </div>
   );

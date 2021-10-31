@@ -10,7 +10,7 @@ export const Footer = () => {
             <div className="text-sm text- font-semibold py-1 text-center md:text-left">
               Copyright © {new Date().getFullYear()}
               <a
-                href="#"
+                href="/"
                 className="text-dark-700 dark:text-light-300 hover:text-dark-300 dark:hover:text-light-500 text-sm font-semibold p-1"
               >
                 Organizational Management

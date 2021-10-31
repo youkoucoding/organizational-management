@@ -7,7 +7,10 @@ export const SideBar = () => {
     <aside className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto shadow-2xl flex flex-col items-center justify-between w-12 z-40 bg-gray-400">
       <div className="md:flex-col md:items-stretch md:min-h-full px-0 flex items-center justify-center w-full mx-auto">
         {/* LOGO */}
-        <a className="flex item-center justify-center py-2">
+        <a
+          href="/"
+          className="flex item-center justify-center py-2 cursor-pointer"
+        >
           <FaDev size={32} />
         </a>
         {/* Decorative Buttons */}

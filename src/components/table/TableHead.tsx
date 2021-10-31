@@ -2,47 +2,37 @@ import React from "react";
 
 export const TableHead = () => {
   return (
-    <tr className="w-full flex">
+    <tr className="w-full grid grid-cols-9 gap-12">
       <th
         scope="col"
-        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="col-span-2 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-center font-medium">
-          name
-        </span>
+        name
       </th>
       <th
         scope="col"
-        className="w-1/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="col-span-1 px-3 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-center font-medium">
-          age
-        </span>
+        age
       </th>
       <th
         scope="col"
-        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="col-span-2 px-3 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-start font-medium">
-          actived
-        </span>
+        actived
       </th>
       <th
         scope="col"
-        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="col-span-2 px-3 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-center font-medium">
-          representation
-        </span>
+        representation
       </th>
 
       <th
         scope="col"
-        className="w-2/9 px-3 py-3 text-xs font-medium text-gray-700 uppercase tracking-wider"
+        className="col-span-2 px-3 py-3 text-xs font-semibold text-gray-700 uppercase tracking-wider"
       >
-        <span className="flex items-center justify-center text-gray-500 font-medium">
-          action
-        </span>
+        action
       </th>
     </tr>
   );
