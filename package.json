@@ -1,5 +1,6 @@
 {
   "name": "organizational-management",
+  "homepage": "https://youkoucoding.github.io/organizational-management",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,6 +24,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
@@ -56,6 +59,7 @@
     "autoprefixer": "^9.8.8",
     "concurrently": "^6.3.0",
     "eslint-config-prettier": "^8.3.0",
+    "gh-pages": "^3.2.3",
     "husky": ">=6",
     "lint-staged": ">=10",
     "postcss": "^7.0.39",
