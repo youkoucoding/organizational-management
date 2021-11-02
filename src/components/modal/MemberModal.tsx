@@ -4,9 +4,14 @@ import { Dialog, Transition } from "@headlessui/react";
 type Props = {
   showMemberModal: boolean;
   setShowMemberModal: (state: boolean) => void;
+  data?: string;
 };
 
-export const MemberModal = ({ showMemberModal, setShowMemberModal }: Props) => {
+export const MemberModal = ({
+  showMemberModal,
+  setShowMemberModal,
+  data,
+}: Props) => {
   const cancelButtonRef = React.useRef(null);
   return (
     <Transition.Root show={showMemberModal} as={React.Fragment}>
@@ -61,6 +66,7 @@ export const MemberModal = ({ showMemberModal, setShowMemberModal }: Props) => {
                             type="text"
                             name="name"
                             id="name"
+                            value={data}
                             autoComplete=""
                             className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                           />

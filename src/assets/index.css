@@ -6,7 +6,4 @@
   .sidebar-icon {
     @apply relative flex items-center justify-center h-8 w-8 mx-auto m-3 text-gray-600 cursor-pointer scale-100 hover:text-gray-800 hover:scale-125 transition-all duration-300;
   }
-  .sidebar-tip {
-    @apply absolute m-1 p-2 min-w-max rounded-md shadow-md bg-gray-700;
-  }
 }

@@ -5,7 +5,7 @@ import { MemberModel } from "model";
 
 export const DisplayRow = ({ member }: { member: MemberModel }) => {
   const [showDeleteConfirm, setShowDeleteConfirm] = React.useState(false);
-  const [showMemberModal, setShowMemberModal] = React.useState(false);
+  const [showEditMemberModal, setShowEditMemberModal] = React.useState(false);
 
   return (
     <tr className="w-full grid grid-cols-9 gap-12 bg-gray-50">
@@ -26,7 +26,7 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
       </td>
       <td className="col-span-2 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.status}
+          {member.name}
         </p>
       </td>
       <td className="col-span-2 px-3 py-4 whitespace-nowrap bg-gray-50">
@@ -34,7 +34,7 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
           <button
             className="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm uppercase tracking-wide font-medium"
             type="button"
-            onClick={() => setShowMemberModal(true)}
+            onClick={() => setShowEditMemberModal(true)}
           >
             edit
           </button>
@@ -46,8 +46,9 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
             delete
           </button>
           <MemberModal
-            showMemberModal={showMemberModal}
-            setShowMemberModal={setShowMemberModal}
+            showMemberModal={showEditMemberModal}
+            setShowMemberModal={setShowEditMemberModal}
+            data={"hello"}
           />
           <DeleteConfirmModal
             showDeleteConfirm={showDeleteConfirm}
