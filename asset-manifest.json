@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/organizational-management/static/css/main.53c00df7.chunk.css",
-    "main.js": "/organizational-management/static/js/main.2db56a60.chunk.js",
-    "main.js.map": "/organizational-management/static/js/main.2db56a60.chunk.js.map",
-    "runtime-main.js": "/organizational-management/static/js/runtime-main.83b5cc0a.js",
-    "runtime-main.js.map": "/organizational-management/static/js/runtime-main.83b5cc0a.js.map",
-    "static/js/2.1582ff29.chunk.js": "/organizational-management/static/js/2.1582ff29.chunk.js",
-    "static/js/2.1582ff29.chunk.js.map": "/organizational-management/static/js/2.1582ff29.chunk.js.map",
-    "static/js/3.179d0596.chunk.js": "/organizational-management/static/js/3.179d0596.chunk.js",
-    "static/js/3.179d0596.chunk.js.map": "/organizational-management/static/js/3.179d0596.chunk.js.map",
+    "main.css": "/organizational-management/static/css/main.ccfffe9f.chunk.css",
+    "main.js": "/organizational-management/static/js/main.d943453d.chunk.js",
+    "main.js.map": "/organizational-management/static/js/main.d943453d.chunk.js.map",
+    "runtime-main.js": "/organizational-management/static/js/runtime-main.04f7dbbd.js",
+    "runtime-main.js.map": "/organizational-management/static/js/runtime-main.04f7dbbd.js.map",
+    "static/js/2.927b0768.chunk.js": "/organizational-management/static/js/2.927b0768.chunk.js",
+    "static/js/2.927b0768.chunk.js.map": "/organizational-management/static/js/2.927b0768.chunk.js.map",
+    "static/js/3.73424a9c.chunk.js": "/organizational-management/static/js/3.73424a9c.chunk.js",
+    "static/js/3.73424a9c.chunk.js.map": "/organizational-management/static/js/3.73424a9c.chunk.js.map",
     "index.html": "/organizational-management/index.html",
-    "static/css/main.53c00df7.chunk.css.map": "/organizational-management/static/css/main.53c00df7.chunk.css.map",
-    "static/js/2.1582ff29.chunk.js.LICENSE.txt": "/organizational-management/static/js/2.1582ff29.chunk.js.LICENSE.txt"
+    "static/css/main.ccfffe9f.chunk.css.map": "/organizational-management/static/css/main.ccfffe9f.chunk.css.map",
+    "static/js/2.927b0768.chunk.js.LICENSE.txt": "/organizational-management/static/js/2.927b0768.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.83b5cc0a.js",
-    "static/js/2.1582ff29.chunk.js",
-    "static/css/main.53c00df7.chunk.css",
-    "static/js/main.2db56a60.chunk.js"
+    "static/js/runtime-main.04f7dbbd.js",
+    "static/js/2.927b0768.chunk.js",
+    "static/css/main.ccfffe9f.chunk.css",
+    "static/js/main.d943453d.chunk.js"
   ]
 }
