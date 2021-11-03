@@ -5,11 +5,11 @@ import { CardTitle } from "components/cards/CardTitle";
 import { TableHead } from "components/table/TableHead";
 import { DisplayRow } from "components/table/DisplayRow";
 import { ToggleButton, AddMemberButton } from "components/buttons";
-import { MemberModal } from "components/modal/MemberModal";
 
 export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
   // control the children orgs's expand and collapse
   const [showChildren, setShowChildren] = React.useState(false);
+  // the AddMemberModal is on the each Orgs Card
   const [showAddMemberModal, setShowAddMemberModal] = React.useState(false);
 
   const handleChildrenShow = React.useCallback(() => {

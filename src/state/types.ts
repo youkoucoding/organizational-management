@@ -12,10 +12,10 @@ export enum ACTION {
   FetchDataSuccess = "FETCH_DATA_SUCCESS",
   FetchDataFailure = "FETCH_DATA_FAILURE",
   EditMember = "EDIT_MEMBER",
-  // ADD_ORG,
-  // ADD_MEMBER,
-  // DELETE_ORG,
+  AddMember = "ADD_MEMBER",
   DELETE_MEMBER = "DELETE_MEMBER",
+  // ADD_ORG,
+  // DELETE_ORG,
 }
 
 export type FetchSuccessAction = {
@@ -32,6 +32,10 @@ export type EditMemberAction = {
   payload: MemberModel;
 };
 
+export type DeleteMemberAction = {
+  type: ACTION.DELETE_MEMBER;
+  payload: { id: string };
+};
 // type AddOrgAction = {
 //   type: ACTION.ADD_ORG;
 //   payload: OrgsProps;
@@ -46,11 +50,6 @@ export type EditMemberAction = {
 //   type: ACTION.DELETE_ORG;
 //   payload: { id: string };
 // };
-
-export type DeleteMemberAction = {
-  type: ACTION.DELETE_MEMBER;
-  payload: { id: string };
-};
 
 export type ActionTypes =
   | FetchSuccessAction

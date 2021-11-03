@@ -6,29 +6,20 @@ import { useForm, SubmitHandler } from "react-hook-form";
 type Props = {
   showMemberModal: boolean;
   setShowMemberModal: (state: boolean) => void;
-  member: MemberModel;
 };
 
-export const MemberModal = ({
+export const EditMemberModal = ({
   showMemberModal,
   setShowMemberModal,
-  member,
 }: Props) => {
   // 将需要修改的 member 信息 作为 defaultValue 传入useForm
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      id: member.id,
-      name: member.name,
-      age: member.age,
-      status: member.status,
-    },
-  });
+  } = useForm();
 
-  const handleEditedMemberSubmit: SubmitHandler<MemberModel> = (data) => {
+  const handleAddedMemberSubmit: SubmitHandler<MemberModel> = (data) => {
     setShowMemberModal(false);
   };
 
@@ -72,11 +63,10 @@ export const MemberModal = ({
           >
             <div className="inline-block align-bottom bg-gray-50 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="mt-5 md:mt-0 md:col-span-2">
-                <form onSubmit={handleSubmit(handleEditedMemberSubmit)}>
+                <form onSubmit={handleSubmit(handleAddedMemberSubmit)}>
                   <div className="px-4 py-5 bg-white sm:p-6 font-medium">
-                    {"Editing member is "}
+                    {"Add New Member "}
                     {": "}
-                    <span className="text-lg">{member.id}</span>
                   </div>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-white sm:p-6">
@@ -171,7 +161,7 @@ export const MemberModal = ({
                         type="submit"
                         className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                       >
-                        Save
+                        Add New Member
                       </button>
                     </div>
                   </div>

@@ -1,4 +1,6 @@
+import { overArgs } from "lodash";
 import { CompositedModel, MemberModel } from "model";
+import { clearConfigCache } from "prettier";
 import { State, ActionTypes, ACTION } from "state/types";
 
 export const initialState: State = {
@@ -28,14 +30,16 @@ export const reducer = (state: State, action: ActionTypes): State => {
     case ACTION.EditMember: {
       return {
         ...state,
-        data: [
-          // ...state.data,
-          // [
-          //   ...state.data.filter((ele) =>
-          //     ele.members.filter((member) => (member.id = action.payload.id))
-          //   ),
-          // ],
-        ],
+        // TODO: { members: (MemberModel[] | undefined)[]; how to omit the undefined?
+        // FIXME: works but ugly
+        data: state.data.map((org) => ({
+          ...org,
+          members: org.members?.map((member, index) =>
+            member.id === action.payload.id
+              ? (org.members[index] = action.payload)
+              : org.members[index]
+          ),
+        })),
       };
     }
 
@@ -55,3 +59,9 @@ export const reducer = (state: State, action: ActionTypes): State => {
       return state;
   }
 };
+
+// org.members?.map((member, index) => {
+//   if (member.id === action.payload.id) {
+//     return org.members.splice(index, 1, action.payload);
+//   }
+// })

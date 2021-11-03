@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DeleteConfirmModal } from "components/modal/DeleteConfirmModal";
-import { MemberModal } from "components/modal/MemberModal";
+import { EditMemberModal } from "components/modal/EditMemberModal";
 import { MemberModel } from "model";
 
 export const DisplayRow = ({ member }: { member: MemberModel }) => {
@@ -53,7 +53,7 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
           >
             delete
           </button>
-          <MemberModal
+          <EditMemberModal
             showMemberModal={showEditMemberModal}
             setShowMemberModal={setShowEditMemberModal}
             member={member}
