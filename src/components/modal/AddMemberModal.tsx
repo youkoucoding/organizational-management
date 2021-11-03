@@ -2,25 +2,42 @@ import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { MemberModel } from "model";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { GlobalContext } from "state/context";
+import { ACTION } from "state/types";
 
 type Props = {
   showMemberModal: boolean;
   setShowMemberModal: (state: boolean) => void;
+  org_id: string;
 };
 
-export const EditMemberModal = ({
+export const AddMemberModal = ({
   showMemberModal,
   setShowMemberModal,
+  org_id,
 }: Props) => {
+  const { dispatch } = React.useContext(GlobalContext);
   // 将需要修改的 member 信息 作为 defaultValue 传入useForm
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      // member's id
+      id: undefined,
+      name: "member_name",
+      age: 30,
+      status: "activated",
+    },
+  });
 
   const handleAddedMemberSubmit: SubmitHandler<MemberModel> = (data) => {
     setShowMemberModal(false);
+    dispatch({
+      type: ACTION.AddMember,
+      payload: { data: data, org_id: org_id },
+    });
   };
 
   const cancelButtonRef = React.useRef(null);
@@ -65,8 +82,10 @@ export const EditMemberModal = ({
               <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={handleSubmit(handleAddedMemberSubmit)}>
                   <div className="px-4 py-5 bg-white sm:p-6 font-medium">
-                    {"Add New Member "}
-                    {": "}
+                    You Are Adding New Member to organization{" "}
+                    <span className="font-mono font-semibold text-green-600">
+                      {org_id}
+                    </span>
                   </div>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-white sm:p-6">
@@ -114,7 +133,7 @@ export const EditMemberModal = ({
                             {...register("age", {
                               required: true,
                               min: 18,
-                              max: 100,
+                              max: 99,
                             })}
                             className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                           />
@@ -137,7 +156,7 @@ export const EditMemberModal = ({
                           </select>
                         </div>
 
-                        <div className="col-span-6 sm:col-span-3">
+                        {/* <div className="col-span-6 sm:col-span-3">
                           <label
                             htmlFor="role"
                             className="block text-sm font-medium text-gray-700"
@@ -153,7 +172,7 @@ export const EditMemberModal = ({
                             <option>Member</option>
                             <option>Representation</option>
                           </select>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">

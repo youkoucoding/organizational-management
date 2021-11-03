@@ -18,7 +18,7 @@ export const DeleteConfirmModal = ({
   const { dispatch } = React.useContext(GlobalContext);
 
   const handleConfirmDelete = (id: string) => {
-    dispatch({ type: ACTION.DELETE_MEMBER, payload: { id } });
+    dispatch({ type: ACTION.DeleteMember, payload: { id } });
     setShowDeleteConfirm(false);
   };
 

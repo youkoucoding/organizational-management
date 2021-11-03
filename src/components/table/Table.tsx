@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ReadyForRenderModel } from "model";
 
+import { AddMemberModal } from "components/modal/AddMemberModal";
 import { CardTitle } from "components/cards/CardTitle";
 import { TableHead } from "components/table/TableHead";
 import { DisplayRow } from "components/table/DisplayRow";
@@ -67,10 +68,12 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
             </table>
             <div className="sticky bottom-0 py-1 rounded-b-lg bg-gray-300" />
           </div>
-          {/* <MemberModal
+          <AddMemberModal
             showMemberModal={showAddMemberModal}
             setShowMemberModal={setShowAddMemberModal}
-          /> */}
+            // because of the null value
+            org_id={renderData.name}
+          />
         </div>
         <div
           className={`${

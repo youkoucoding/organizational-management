@@ -13,7 +13,7 @@ export enum ACTION {
   FetchDataFailure = "FETCH_DATA_FAILURE",
   EditMember = "EDIT_MEMBER",
   AddMember = "ADD_MEMBER",
-  DELETE_MEMBER = "DELETE_MEMBER",
+  DeleteMember = "DELETE_MEMBER",
   // ADD_ORG,
   // DELETE_ORG,
 }
@@ -33,17 +33,19 @@ export type EditMemberAction = {
 };
 
 export type DeleteMemberAction = {
-  type: ACTION.DELETE_MEMBER;
+  type: ACTION.DeleteMember;
   payload: { id: string };
 };
+
+type AddMemberAction = {
+  type: ACTION.AddMember;
+  // 添加成员时，携带此时所在的 org 的 id
+  payload: { data: MemberModel; org_id: string };
+};
+
 // type AddOrgAction = {
 //   type: ACTION.ADD_ORG;
 //   payload: OrgsProps;
-// };
-
-// type AddMemberAction = {
-//   type: ACTION.ADD_MEMBER;
-//   payload: MemProps;
 // };
 
 // type DeleteOrg = {
@@ -54,8 +56,8 @@ export type DeleteMemberAction = {
 export type ActionTypes =
   | FetchSuccessAction
   | FetchFailureAction
+  | DeleteMemberAction
   | EditMemberAction
-  | DeleteMemberAction;
+  | AddMemberAction;
 // | AddOrgAction
-// | AddMemberAction
 // | DeleteOrg

@@ -1,7 +1,6 @@
-import { overArgs } from "lodash";
-import { CompositedModel, MemberModel } from "model";
-import { clearConfigCache } from "prettier";
 import { State, ActionTypes, ACTION } from "state/types";
+import { getLastMemberId } from "utils/getLastMemberId";
+import { CompositedModel, MemberModel } from "model";
 
 export const initialState: State = {
   status: "isLoading",
@@ -27,6 +26,20 @@ export const reducer = (state: State, action: ActionTypes): State => {
         data: [],
       };
     }
+
+    case ACTION.DeleteMember: {
+      return {
+        ...state,
+        // tricky place, but ok now
+        data: state.data.map((org) => ({
+          ...org,
+          members: org.members?.filter(
+            (member) => member.id !== action.payload.id
+          ),
+        })),
+      };
+    }
+
     case ACTION.EditMember: {
       return {
         ...state,
@@ -43,15 +56,22 @@ export const reducer = (state: State, action: ActionTypes): State => {
       };
     }
 
-    case ACTION.DELETE_MEMBER: {
+    case ACTION.AddMember: {
+      const lastMemberId = getLastMemberId(state) as string;
+      const res = lastMemberId.match(/\d+.?\d+?$/);
+      const lastMemberIdNum = res ? res[0] : res;
+
+      const newId = "member-" + lastMemberIdNum;
+
       return {
         ...state,
-        // tricky place, but ok now
+        // 通过 payload 中的 org-id, 确定需要加入的位置 not push, concat it!
         data: state.data.map((org) => ({
           ...org,
-          members: org.members?.filter(
-            (member) => member.id !== action.payload.id
-          ),
+          members:
+            org.id === action.payload.org_id
+              ? org.members.concat([{ ...action.payload.data, id: newId }])
+              : org.members,
         })),
       };
     }
@@ -59,9 +79,3 @@ export const reducer = (state: State, action: ActionTypes): State => {
       return state;
   }
 };
-
-// org.members?.map((member, index) => {
-//   if (member.id === action.payload.id) {
-//     return org.members.splice(index, 1, action.payload);
-//   }
-// })
