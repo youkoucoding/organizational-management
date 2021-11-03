@@ -21,12 +21,20 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
       </td>
       <td className="col-span-2 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.status}
+          {member.status?.toLowerCase() === "activated" ? (
+            <span className="bg-green-100 text-green-600 px-4 py-1 rounded-full text-sm uppercase tracking-wide font-medium">
+              activated
+            </span>
+          ) : (
+            <span className="bg-red-100 text-red-500 px-4 py-1 rounded-full text-sm uppercase tracking-wide font-medium">
+              inactivated
+            </span>
+          )}
         </p>
       </td>
       <td className="col-span-2 px-3 py-4 whitespace-nowrap bg-gray-50">
         <p className="flex items-center justify-center text-gray-500 font-medium">
-          {member.name}
+          member
         </p>
       </td>
       <td className="col-span-2 px-3 py-4 whitespace-nowrap bg-gray-50">
@@ -48,11 +56,12 @@ export const DisplayRow = ({ member }: { member: MemberModel }) => {
           <MemberModal
             showMemberModal={showEditMemberModal}
             setShowMemberModal={setShowEditMemberModal}
-            data={"hello"}
+            member={member}
           />
           <DeleteConfirmModal
             showDeleteConfirm={showDeleteConfirm}
             setShowDeleteConfirm={setShowDeleteConfirm}
+            id={member.id}
           />
         </div>
       </td>

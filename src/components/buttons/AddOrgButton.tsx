@@ -7,9 +7,9 @@ export const AddOrgButton = () => {
         <AiOutlineUsergroupAdd size={42} />
       </div>
       <span
-        className={`group-hover:visible w-48 mx-6 py-3 absolute text-center text-gray-700 bg-gray-200 ring-2 invisible transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 px-6  left-0 -top-14 rounded-md`}
+        className={`group-hover:visible w-56 mx-2 py-3 absolute text-center text-gray-700 bg-gray-200 ring-2 invisible transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 px-6  left-0 -top-14 rounded-md`}
       >
-        Add New Member
+        Add New Sub Org
       </span>
     </div>
   );

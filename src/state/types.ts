@@ -1,4 +1,4 @@
-import { CompositedModel } from "model";
+import { CompositedModel, MemberModel } from "model";
 
 // global state
 export type State = {
@@ -11,10 +11,11 @@ export type State = {
 export enum ACTION {
   FetchDataSuccess = "FETCH_DATA_SUCCESS",
   FetchDataFailure = "FETCH_DATA_FAILURE",
+  EditMember = "EDIT_MEMBER",
   // ADD_ORG,
   // ADD_MEMBER,
   // DELETE_ORG,
-  // DELETE_MEMBER,
+  DELETE_MEMBER = "DELETE_MEMBER",
 }
 
 export type FetchSuccessAction = {
@@ -25,6 +26,10 @@ export type FetchSuccessAction = {
 export type FetchFailureAction = {
   type: ACTION.FetchDataFailure;
   payload: string;
+};
+export type EditMemberAction = {
+  type: ACTION.EditMember;
+  payload: MemberModel;
 };
 
 // type AddOrgAction = {
@@ -42,13 +47,16 @@ export type FetchFailureAction = {
 //   payload: { id: string };
 // };
 
-// type DeleteMember = {
-//   type: ACTION.DELETE_MEMBER;
-//   payload: { id: string };
-// };
+export type DeleteMemberAction = {
+  type: ACTION.DELETE_MEMBER;
+  payload: { id: string };
+};
 
-export type ActionTypes = FetchSuccessAction | FetchFailureAction;
+export type ActionTypes =
+  | FetchSuccessAction
+  | FetchFailureAction
+  | EditMemberAction
+  | DeleteMemberAction;
 // | AddOrgAction
 // | AddMemberAction
 // | DeleteOrg
-// | DeleteMember;

@@ -1,17 +1,37 @@
 import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { MemberModel } from "model";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type Props = {
   showMemberModal: boolean;
   setShowMemberModal: (state: boolean) => void;
-  data?: string;
+  member: MemberModel;
 };
 
 export const MemberModal = ({
   showMemberModal,
   setShowMemberModal,
-  data,
+  member,
 }: Props) => {
+  // 将需要修改的 member 信息 作为 defaultValue 传入useForm
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      id: member.id,
+      name: member.name,
+      age: member.age,
+      status: member.status,
+    },
+  });
+
+  const handleEditedMemberSubmit: SubmitHandler<MemberModel> = (data) => {
+    setShowMemberModal(false);
+  };
+
   const cancelButtonRef = React.useRef(null);
   return (
     <Transition.Root show={showMemberModal} as={React.Fragment}>
@@ -34,6 +54,7 @@ export const MemberModal = ({
             <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
+          {/* make the modal at screen center */}
           <span
             className="hidden sm:inline-block sm:align-middle sm:h-screen"
             aria-hidden="true"
@@ -51,7 +72,12 @@ export const MemberModal = ({
           >
             <div className="inline-block align-bottom bg-gray-50 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="mt-5 md:mt-0 md:col-span-2">
-                <form action="#" method="POST">
+                <form onSubmit={handleSubmit(handleEditedMemberSubmit)}>
+                  <div className="px-4 py-5 bg-white sm:p-6 font-medium">
+                    {"Editing member is "}
+                    {": "}
+                    <span className="text-lg">{member.id}</span>
+                  </div>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-white sm:p-6">
                       <div className="grid grid-cols-6 gap-6">
@@ -60,14 +86,21 @@ export const MemberModal = ({
                             htmlFor="name"
                             className="block text-sm font-medium text-gray-700"
                           >
-                            Name
+                            {errors.name?.type === "required" ? (
+                              <span className="text-red-500 font-medium">
+                                Name is required
+                              </span>
+                            ) : (
+                              "Name"
+                            )}
                           </label>
                           <input
                             type="text"
-                            name="name"
                             id="name"
-                            value={data}
-                            autoComplete=""
+                            {...register("name", {
+                              required: true,
+                              maxLength: 20,
+                            })}
                             className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                           />
                         </div>
@@ -77,13 +110,22 @@ export const MemberModal = ({
                             htmlFor="age"
                             className="block text-sm font-medium text-gray-700"
                           >
-                            Age
+                            {errors.age ? (
+                              <span className="text-red-500 font-medium">
+                                Need to be above 18 below 99
+                              </span>
+                            ) : (
+                              "Age"
+                            )}
                           </label>
                           <input
                             type="number"
-                            name="age"
                             id="age"
-                            autoComplete=""
+                            {...register("age", {
+                              required: true,
+                              min: 18,
+                              max: 100,
+                            })}
                             className="mt-1 focus:ring-green-500 focus:border-green-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                           />
                         </div>
@@ -96,13 +138,12 @@ export const MemberModal = ({
                             Status
                           </label>
                           <select
-                            id="country"
-                            name="country"
-                            autoComplete="country-name"
+                            id="status"
+                            {...register("status")}
                             className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                           >
-                            <option>Activated</option>
-                            <option>Inactivated</option>
+                            <option value="activated">Activated</option>
+                            <option value="inactivated">Inactivated</option>
                           </select>
                         </div>
 

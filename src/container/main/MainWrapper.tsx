@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GlobalContext } from "store/context";
+import { GlobalContext } from "state/context";
 
 export const MainWrapper = ({ children }: { children: React.ReactNode }) => {
   const { state } = React.useContext(GlobalContext);

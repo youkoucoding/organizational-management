@@ -23,9 +23,12 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
   // nested component
   const nestedTable = renderData.children.map((child) => {
     return (
-      <div className="relative flex flex-col border-l-4">
+      <div
+        key={child.id + child.parent}
+        className="relative flex flex-col border-l-4"
+      >
         <div className="ml-12">
-          <Table key={child.id} renderData={child as ReadyForRenderModel} />
+          <Table renderData={child as ReadyForRenderModel} />
         </div>
       </div>
     );
@@ -52,9 +55,8 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
                 <TableHead />
               </thead>
               <tbody className="flex flex-col bg-white divide-y divide-gray-200">
-                {/* {JSON.stringify(renderData)} */}
                 {renderData.members?.map((member) => (
-                  <React.Fragment key={member.name}>
+                  <React.Fragment key={member.id + member.age}>
                     <DisplayRow
                       member={member}
                       // handleToEdit={handleToEdit}
@@ -65,10 +67,10 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
             </table>
             <div className="sticky bottom-0 py-1 rounded-b-lg bg-gray-300" />
           </div>
-          <MemberModal
+          {/* <MemberModal
             showMemberModal={showAddMemberModal}
             setShowMemberModal={setShowAddMemberModal}
-          />
+          /> */}
         </div>
         <div
           className={`${

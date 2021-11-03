@@ -1,6 +1,6 @@
 import * as React from "react";
 import { CompositedModel } from "model";
-import { ACTION, ActionTypes } from "store/types";
+import { ACTION, ActionTypes } from "state/types";
 
 // 通过 从 AppContextProvider中  判断 传入的状态码， 执行不同的dispatch（以及相应数据）
 export const fetchDataDispatch = (

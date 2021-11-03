@@ -1,16 +1,27 @@
 import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { GlobalContext } from "state/context";
+import { ACTION } from "state/types";
 import { FiAlertCircle } from "react-icons/fi";
 
 type Props = {
   showDeleteConfirm: boolean;
   setShowDeleteConfirm: (state: boolean) => void;
+  id: string;
 };
 
 export const DeleteConfirmModal = ({
   showDeleteConfirm,
   setShowDeleteConfirm,
+  id,
 }: Props) => {
+  const { dispatch } = React.useContext(GlobalContext);
+
+  const handleConfirmDelete = (id: string) => {
+    dispatch({ type: ACTION.DELETE_MEMBER, payload: { id } });
+    setShowDeleteConfirm(false);
+  };
+
   const cancelButtonRef = React.useRef(null);
   return (
     <Transition.Root show={showDeleteConfirm} as={React.Fragment}>
@@ -75,9 +86,9 @@ export const DeleteConfirmModal = ({
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
-                  type="button"
+                  type="submit"
                   className="w-full inline-flex uppercase tracking-wide justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                  onClick={() => setShowDeleteConfirm(false)}
+                  onClick={() => handleConfirmDelete(id)}
                 >
                   Delete
                 </button>

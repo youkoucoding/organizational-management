@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { State, ActionTypes } from "store/types";
+import { State, ActionTypes } from "state/types";
 import { initialState } from "./reducer";
 
 export type AppContextType = {

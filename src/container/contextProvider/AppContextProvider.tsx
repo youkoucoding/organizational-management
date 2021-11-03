@@ -1,8 +1,8 @@
 import * as React from "react";
 import axios from "axios";
 import { OrgModel, MemberModel } from "model";
-import { GlobalContext } from "store/context";
-import { reducer, initialState } from "store/reducer";
+import { GlobalContext } from "state/context";
+import { reducer, initialState } from "state/reducer";
 import { fetchDataDispatch } from "utils/dispatchHelpers";
 import getCompositeData from "utils/getCompositeData";
 
