@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/organizational-management/static/css/main.ff72691d.chunk.css",
-    "main.js": "/organizational-management/static/js/main.b68a74df.chunk.js",
-    "main.js.map": "/organizational-management/static/js/main.b68a74df.chunk.js.map",
+    "main.css": "/organizational-management/static/css/main.43e43740.chunk.css",
+    "main.js": "/organizational-management/static/js/main.db9c0cdf.chunk.js",
+    "main.js.map": "/organizational-management/static/js/main.db9c0cdf.chunk.js.map",
     "runtime-main.js": "/organizational-management/static/js/runtime-main.566f4e70.js",
     "runtime-main.js.map": "/organizational-management/static/js/runtime-main.566f4e70.js.map",
-    "static/js/2.609320ac.chunk.js": "/organizational-management/static/js/2.609320ac.chunk.js",
-    "static/js/2.609320ac.chunk.js.map": "/organizational-management/static/js/2.609320ac.chunk.js.map",
+    "static/js/2.92be332e.chunk.js": "/organizational-management/static/js/2.92be332e.chunk.js",
+    "static/js/2.92be332e.chunk.js.map": "/organizational-management/static/js/2.92be332e.chunk.js.map",
     "static/js/3.9cd279f5.chunk.js": "/organizational-management/static/js/3.9cd279f5.chunk.js",
     "static/js/3.9cd279f5.chunk.js.map": "/organizational-management/static/js/3.9cd279f5.chunk.js.map",
     "index.html": "/organizational-management/index.html",
-    "static/css/main.ff72691d.chunk.css.map": "/organizational-management/static/css/main.ff72691d.chunk.css.map",
-    "static/js/2.609320ac.chunk.js.LICENSE.txt": "/organizational-management/static/js/2.609320ac.chunk.js.LICENSE.txt"
+    "static/css/main.43e43740.chunk.css.map": "/organizational-management/static/css/main.43e43740.chunk.css.map",
+    "static/js/2.92be332e.chunk.js.LICENSE.txt": "/organizational-management/static/js/2.92be332e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.566f4e70.js",
-    "static/js/2.609320ac.chunk.js",
-    "static/css/main.ff72691d.chunk.css",
-    "static/js/main.b68a74df.chunk.js"
+    "static/js/2.92be332e.chunk.js",
+    "static/css/main.43e43740.chunk.css",
+    "static/js/main.db9c0cdf.chunk.js"
   ]
 }
