@@ -22,7 +22,7 @@ export const Main = () => {
     <React.Fragment>
       {readyRenderDatas.length !== 0 &&
         readyRenderDatas.map((data) => (
-          <div key={data.id + data.name}>
+          <div className="pt-6" key={data.id + data.name}>
             <Card renderData={data} />
           </div>
         ))}

@@ -14,8 +14,7 @@ export enum ACTION {
   EditMember = "EDIT_MEMBER",
   AddMember = "ADD_MEMBER",
   DeleteMember = "DELETE_MEMBER",
-  // ADD_ORG,
-  // DELETE_ORG,
+  AddOrg = "ADD_ORGANIZATION",
 }
 
 export type FetchSuccessAction = {
@@ -43,21 +42,14 @@ type AddMemberAction = {
   payload: { data: MemberModel; org_id: string };
 };
 
-// type AddOrgAction = {
-//   type: ACTION.ADD_ORG;
-//   payload: OrgsProps;
-// };
-
-// type DeleteOrg = {
-//   type: ACTION.DELETE_ORG;
-//   payload: { id: string };
-// };
+type AddOrgAction = {
+  type: ACTION.AddOrg;
+};
 
 export type ActionTypes =
   | FetchSuccessAction
   | FetchFailureAction
   | DeleteMemberAction
   | EditMemberAction
-  | AddMemberAction;
-// | AddOrgAction
-// | DeleteOrg
+  | AddMemberAction
+  | AddOrgAction;

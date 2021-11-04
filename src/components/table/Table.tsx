@@ -36,7 +36,7 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
   });
 
   return (
-    <div className="w-full pt-3 pb-1">
+    <div className="w-full pt-1">
       <div className="mx-4 sm:mx-6 lg:mx-1">
         <div className="min-w-full sm:px-6 lg:px-2">
           <div className="shadow border border-gray-300 sm:rounded-lg">

@@ -1,6 +1,6 @@
 import { State, ActionTypes, ACTION } from "state/types";
 import { getLastMemberId } from "utils/getLastMemberId";
-import { CompositedModel, MemberModel } from "model";
+import { getLastOrgId } from "utils/getLastOrgId";
 
 export const initialState: State = {
   status: "isLoading",
@@ -57,11 +57,12 @@ export const reducer = (state: State, action: ActionTypes): State => {
     }
 
     case ACTION.AddMember: {
-      const lastMemberId = getLastMemberId(state) as string;
-      const res = lastMemberId.match(/\d+.?\d+?$/);
-      const lastMemberIdNum = res ? res[0] : res;
+      let lastMemberId = getLastMemberId(state) as string;
+      let res = lastMemberId.match(/\d+.?\d+?$/);
+      let lastMemberIdNum = res ? res[0] : res;
 
-      const newId = "member-" + lastMemberIdNum;
+      const newId =
+        "member-" + (lastMemberIdNum ? Number(lastMemberIdNum) + 1 : null);
 
       return {
         ...state,
@@ -73,6 +74,30 @@ export const reducer = (state: State, action: ActionTypes): State => {
               ? org.members.concat([{ ...action.payload.data, id: newId }])
               : org.members,
         })),
+      };
+    }
+
+    case ACTION.AddOrg: {
+      let lastOrgId = getLastOrgId(state) as string;
+      let res = lastOrgId.match(/\d+.?\d+?$/);
+      let lastOrgIdNum = res ? res[0] : res;
+
+      const newId =
+        "org-" + (lastOrgIdNum ? Number(lastOrgIdNum) + 1 : lastOrgIdNum);
+
+      return {
+        ...state,
+        data: [
+          ...state.data,
+          {
+            name: newId,
+            id: newId,
+            type: "organization",
+            parent: null,
+            representation: "",
+            members: [],
+          },
+        ],
       };
     }
     default:
