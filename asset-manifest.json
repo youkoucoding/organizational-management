@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/organizational-management/static/css/main.48b9aad1.chunk.css",
-    "main.js": "/organizational-management/static/js/main.f27533b8.chunk.js",
-    "main.js.map": "/organizational-management/static/js/main.f27533b8.chunk.js.map",
+    "main.js": "/organizational-management/static/js/main.cc41ddd2.chunk.js",
+    "main.js.map": "/organizational-management/static/js/main.cc41ddd2.chunk.js.map",
     "runtime-main.js": "/organizational-management/static/js/runtime-main.566f4e70.js",
     "runtime-main.js.map": "/organizational-management/static/js/runtime-main.566f4e70.js.map",
     "static/js/2.4b5337f4.chunk.js": "/organizational-management/static/js/2.4b5337f4.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.566f4e70.js",
     "static/js/2.4b5337f4.chunk.js",
     "static/css/main.48b9aad1.chunk.css",
-    "static/js/main.f27533b8.chunk.js"
+    "static/js/main.cc41ddd2.chunk.js"
   ]
 }
