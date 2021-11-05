@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/organizational-management/static/css/main.ba497926.chunk.css",
-    "main.js": "/organizational-management/static/js/main.7f7405b0.chunk.js",
-    "main.js.map": "/organizational-management/static/js/main.7f7405b0.chunk.js.map",
+    "main.css": "/organizational-management/static/css/main.48b9aad1.chunk.css",
+    "main.js": "/organizational-management/static/js/main.f27533b8.chunk.js",
+    "main.js.map": "/organizational-management/static/js/main.f27533b8.chunk.js.map",
     "runtime-main.js": "/organizational-management/static/js/runtime-main.566f4e70.js",
     "runtime-main.js.map": "/organizational-management/static/js/runtime-main.566f4e70.js.map",
     "static/js/2.4b5337f4.chunk.js": "/organizational-management/static/js/2.4b5337f4.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.9cd279f5.chunk.js": "/organizational-management/static/js/3.9cd279f5.chunk.js",
     "static/js/3.9cd279f5.chunk.js.map": "/organizational-management/static/js/3.9cd279f5.chunk.js.map",
     "index.html": "/organizational-management/index.html",
-    "static/css/main.ba497926.chunk.css.map": "/organizational-management/static/css/main.ba497926.chunk.css.map",
+    "static/css/main.48b9aad1.chunk.css.map": "/organizational-management/static/css/main.48b9aad1.chunk.css.map",
     "static/js/2.4b5337f4.chunk.js.LICENSE.txt": "/organizational-management/static/js/2.4b5337f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.566f4e70.js",
     "static/js/2.4b5337f4.chunk.js",
-    "static/css/main.ba497926.chunk.css",
-    "static/js/main.7f7405b0.chunk.js"
+    "static/css/main.48b9aad1.chunk.css",
+    "static/js/main.f27533b8.chunk.js"
   ]
 }
