@@ -124,14 +124,15 @@ export const EditOrgModal = ({
                             className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                           >
                             {(editable_org.members as MemberModel[]).map(
-                              (member) => (
-                                <option
-                                  key={member.id + member.age}
-                                  value={member.name}
-                                >
-                                  {member.name}
-                                </option>
-                              )
+                              (member) =>
+                                member.status === "activated" ? (
+                                  <option
+                                    key={member.id + member.age}
+                                    value={member.name}
+                                  >
+                                    {member.name}
+                                  </option>
+                                ) : null
                             )}
                           </select>
                         </div>
