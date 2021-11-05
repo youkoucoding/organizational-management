@@ -1,3 +1,4 @@
+import { CompositedModel } from "model";
 import { State, ActionTypes, ACTION } from "state/types";
 import { getLastMemberId } from "utils/getLastMemberId";
 import { getLastOrgId } from "utils/getLastOrgId";
@@ -71,7 +72,7 @@ export const reducer = (state: State, action: ActionTypes): State => {
           ...org,
           members:
             org.id === action.payload.org_id
-              ? org.members.concat([{ ...action.payload.data, id: newId }])
+              ? org.members?.concat([{ ...action.payload.data, id: newId }])
               : org.members,
         })),
       };
@@ -100,6 +101,22 @@ export const reducer = (state: State, action: ActionTypes): State => {
         ],
       };
     }
+    case ACTION.EditOrg: {
+      return {
+        ...state,
+        // attention: the {}
+        data: state.data.map((org) =>
+          org.id === action.payload.id
+            ? {
+                ...org,
+                name: action.payload.name,
+                representation: action.payload.representation,
+              }
+            : org
+        ),
+      };
+    }
+
     default:
       return state;
   }

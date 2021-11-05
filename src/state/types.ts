@@ -1,4 +1,4 @@
-import { CompositedModel, MemberModel } from "model";
+import { CompositedModel, MemberModel, OrgModel } from "model";
 
 // global state
 export type State = {
@@ -15,6 +15,7 @@ export enum ACTION {
   AddMember = "ADD_MEMBER",
   DeleteMember = "DELETE_MEMBER",
   AddOrg = "ADD_ORGANIZATION",
+  EditOrg = "EDIT_ORGANIZATION",
 }
 
 export type FetchSuccessAction = {
@@ -46,10 +47,16 @@ type AddOrgAction = {
   type: ACTION.AddOrg;
 };
 
+type EditOrgAction = {
+  type: ACTION.EditOrg;
+  payload: OrgModel;
+};
+
 export type ActionTypes =
   | FetchSuccessAction
   | FetchFailureAction
   | DeleteMemberAction
   | EditMemberAction
   | AddMemberAction
-  | AddOrgAction;
+  | AddOrgAction
+  | EditOrgAction;

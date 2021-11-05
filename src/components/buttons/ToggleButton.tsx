@@ -2,7 +2,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 
 export const ToggleButton = ({ showChildren }: { showChildren: boolean }) => {
   return (
-    <div className="relative group">
+    <button className="relative group">
       <div
         className={`${
           showChildren ? "rotate-90" : null
@@ -13,10 +13,10 @@ export const ToggleButton = ({ showChildren }: { showChildren: boolean }) => {
       <span
         className={`${
           showChildren ? null : "group-hover:visible"
-        } absolute text-gray-700 bg-gray-200 ring-2 invisible transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 px-6 left-3 top-10 rounded-md`}
+        } absolute text-gray-700 bg-gray-200 ring-1 invisible transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100 px-6 left-3 top-10 rounded-md`}
       >
         Show Sub Organization
       </span>
-    </div>
+    </button>
   );
 };
