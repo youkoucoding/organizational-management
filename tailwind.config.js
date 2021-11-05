@@ -13,6 +13,7 @@ module.exports = {
   variants: {
     extend: {
       visibility: ["group-hover"],
+      backgroundColor: ["even"],
     },
   },
   plugins: [require("@tailwindcss/forms")],

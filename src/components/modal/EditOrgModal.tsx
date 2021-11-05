@@ -1,7 +1,7 @@
 import * as React from "react";
 import { GlobalContext } from "state/context";
 import { Dialog, Transition } from "@headlessui/react";
-import { MemberModel, OrgModel, ReadyForRenderModel } from "model";
+import { MemberModel, OrgModel } from "model";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ACTION } from "state/types";
 
@@ -125,7 +125,10 @@ export const EditOrgModal = ({
                           >
                             {(editable_org.members as MemberModel[]).map(
                               (member) => (
-                                <option key={member.id} value={member.name}>
+                                <option
+                                  key={member.id + member.age}
+                                  value={member.name}
+                                >
                                   {member.name}
                                 </option>
                               )

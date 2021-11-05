@@ -1,4 +1,3 @@
-import { CompositedModel } from "model";
 import { State, ActionTypes, ACTION } from "state/types";
 import { getLastMemberId } from "utils/getLastMemberId";
 import { getLastOrgId } from "utils/getLastOrgId";

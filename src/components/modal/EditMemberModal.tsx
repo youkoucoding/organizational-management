@@ -151,24 +151,6 @@ export const EditMemberModal = ({
                             <option value="inactivated">Inactivated</option>
                           </select>
                         </div>
-
-                        <div className="col-span-6 sm:col-span-3">
-                          <label
-                            htmlFor="role"
-                            className="block text-sm font-medium text-gray-700"
-                          >
-                            Role
-                          </label>
-                          <select
-                            id="role"
-                            name="role"
-                            autoComplete=""
-                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
-                          >
-                            <option>Member</option>
-                            <option>Representation</option>
-                          </select>
-                        </div>
                       </div>
                     </div>
                     <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">

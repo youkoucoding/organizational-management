@@ -72,19 +72,22 @@ export const Table = ({ renderData }: { renderData: ReadyForRenderModel }) => {
             </div>
 
             {/* main table display the whole org and children */}
-            <table className="h-56 rounded-t-xl min-w-full divide-y divide-gray-300">
-              <thead className="bg-gray-200 flex-col min-w-full">
+            <table className="h-56 rounded-t-xl min-w-full divide-y divide-gray-500 bg-white">
+              <thead className="bg-gray-400 flex-col min-w-full">
                 <TableHead />
               </thead>
-              <tbody className="flex flex-col bg-white divide-y divide-gray-200">
+              <tbody className="flex flex-col divide-y divide-gray-200">
                 {renderData.members?.map((member) => (
                   <React.Fragment key={member.id + member.age}>
-                    <DisplayRow member={member} />
+                    <DisplayRow
+                      member={member}
+                      representation={renderData.representation}
+                    />
                   </React.Fragment>
                 ))}
               </tbody>
             </table>
-            <div className="sticky bottom-0 py-1 rounded-b-lg bg-gray-300" />
+            <div className="sticky bottom-0 py-2 rounded-b-lg bg-gray-300" />
           </div>
 
           {/* modals on each org-table */}
