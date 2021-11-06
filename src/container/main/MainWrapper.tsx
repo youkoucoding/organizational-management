@@ -7,6 +7,6 @@ export const MainWrapper = ({ children }: { children: React.ReactNode }) => {
   if (state.status === "isLoading" || state.status === "failure") {
     return null;
   } else {
-    return <div className="pt-9">{children}</div>;
+    return <main className="pt-9">{children}</main>;
   }
 };

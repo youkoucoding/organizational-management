@@ -28,7 +28,7 @@ export const EditOrgModal = ({
       id: editable_org.id,
       name: editable_org.name,
       representation: editable_org.representation,
-      // get the specific org's members to render into the optioins
+      // get the specific org's members to render into the options
       members: editable_org.members,
     },
   });
@@ -82,7 +82,8 @@ export const EditOrgModal = ({
               <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={handleSubmit(handleEditedOrgSubmit)}>
                   <div className="px-4 py-5 bg-white sm:p-6 font-medium">
-                    You're creating New Organization
+                    The organization id you are modifying is：
+                    <span className="font-bold text-lg">{editable_org.id}</span>
                   </div>
                   <div className="shadow overflow-hidden sm:rounded-md">
                     <div className="px-4 py-5 bg-white sm:p-6">
@@ -105,7 +106,7 @@ export const EditOrgModal = ({
                             id="name"
                             {...register("name", {
                               required: true,
-                              maxLength: 20,
+                              maxLength: 30,
                             })}
                             className="mt-1 focus:ring-gray-500 focus:border-gray-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                           />

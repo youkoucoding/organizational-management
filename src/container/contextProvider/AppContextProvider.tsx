@@ -4,7 +4,7 @@ import { OrgModel, MemberModel } from "model";
 import { GlobalContext } from "state/context";
 import { reducer, initialState } from "state/reducer";
 import { fetchDataDispatch } from "utils/dispatchHelpers";
-import getCompositeData from "utils/getCompositeData";
+import { getCompositeData } from "utils/getCompositeData";
 
 const BASE_URL = process.env.REACT_APP_API;
 

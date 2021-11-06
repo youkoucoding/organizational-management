@@ -4,7 +4,7 @@ import { OrgModel, MemberModel, CompositedModel } from "model";
 // 集中处理一次数据，此数据作为渲染UI的原始数据
 // 方法比较蠢，凑合能用，以后用lodash优化
 // debug 时 模拟数据跟原始数据不一致，掉了不少头发，以后注意！！！
-const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
+export const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
   const _orgs = [...orgs];
   const _members = [...members];
 
@@ -26,5 +26,3 @@ const getCompositeData = (orgs: OrgModel[], members: MemberModel[]) => {
   // todo: 返回的 数据 会丢失 parent 值 not good, but why?=> getRenderData()
   return _orgs as CompositedModel[];
 };
-
-export default getCompositeData;
